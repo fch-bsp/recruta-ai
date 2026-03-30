@@ -1,0 +1,19 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '--build-arg=NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyBWIAaS26Y16pvrP6CVBDlQPh96hod8YH8'
+      - '--build-arg=NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=ai-interviewer-ag2025.firebaseapp.com'
+      - '--build-arg=NEXT_PUBLIC_FIREBASE_PROJECT_ID=ai-interviewer-ag2025'
+      - '--build-arg=NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=ai-interviewer-ag2025.firebasestorage.app'
+      - '--build-arg=NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=1001973488023'
+      - '--build-arg=NEXT_PUBLIC_FIREBASE_APP_ID=1:1001973488023:web:83e1d8fcce5e1061fd8cd2'
+      - '--build-arg=NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID='
+      - '-t'
+      - 'southamerica-east1-docker.pkg.dev/homol-489313/ai-interviewer/app:latest'
+      - '.'
+
+images:
+  - 'southamerica-east1-docker.pkg.dev/homol-489313/ai-interviewer/app:latest'
+
+timeout: '1200s'

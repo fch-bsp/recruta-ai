@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Interviewer 🤖
 
-## Getting Started
+Simule entrevistas reais com inteligência artificial para otimizar processos de recrutamento.
 
-First, run the development server:
+## 📖 Sobre o Projeto
+
+O **AI Interviewer** é uma plataforma que utiliza o poder do GPT-4o para realizar entrevistas técnicas e comportamentais de forma automática, analisando currículos (PDF/DOCX) em relação às descrições de vagas.
+
+## 🚀 Como Iniciar
+
+A maneira mais fácil de rodar o projeto localmente é utilizando o script de inicialização automático:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+chmod +x start.sh
+./start.sh
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Este script irá:
+1. Verificar seu arquivo `.env`.
+2. Instalar as dependências necessárias.
+3. Iniciar o servidor em `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📚 Documentação Completa
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para detalhes sobre a usabilidade, tecnologias e arquitetura do projeto, acesse o arquivo:
+👉 **[DOCUMENTATION.md](./DOCUMENTATION.md)**
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+Desenvolvido com Next.js e OpenAI.

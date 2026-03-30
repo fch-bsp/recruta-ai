@@ -1,0 +1,15 @@
+node_modules
+.next
+.git
+.gitignore
+.env
+.env.local
+.env.production
+*.md
+*.pdf
+*.txt
+!README.md
+Desenvolvedor Fullstack com foco em IA GenAI
+test_pdf.js
+SystemPrompt.txt
+curriculo_*.pdf
