@@ -27,3 +27,4 @@ Para detalhes sobre a usabilidade, tecnologias e arquitetura do projeto, acesse 
 
 ---
 Desenvolvido com Next.js e OpenAI.
+# recruta-ai
