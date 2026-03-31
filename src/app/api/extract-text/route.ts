@@ -41,11 +41,13 @@ async function parsePdfPrimary(buffer: Buffer): Promise<string> {
 
 async function parsePdfFallback(buffer: Buffer): Promise<string> {
   const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.mjs");
+  const path = await import("path");
+  pdfjsLib.GlobalWorkerOptions.workerSrc = path.join(process.cwd(), "public", "pdf.worker.mjs");
   const doc = await pdfjsLib.getDocument({
     data: new Uint8Array(buffer),
     useSystemFonts: true,
     disableFontFace: true,
-    standardFontDataUrl: undefined,
+    isEvalSupported: false,
   }).promise;
   const pages: string[] = [];
   for (let i = 1; i <= doc.numPages; i++) {
