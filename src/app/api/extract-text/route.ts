@@ -41,18 +41,21 @@ async function parsePdfPrimary(buffer: Buffer): Promise<string> {
 
 async function parsePdfFallback(buffer: Buffer): Promise<string> {
   const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.mjs");
-  const path = await import("path");
-  const fontPath = path.join(process.cwd(), "node_modules/pdfjs-dist/standard_fonts/");
   const doc = await pdfjsLib.getDocument({
     data: new Uint8Array(buffer),
-    standardFontDataUrl: fontPath,
     useSystemFonts: true,
+    disableFontFace: true,
+    standardFontDataUrl: undefined,
   }).promise;
   const pages: string[] = [];
   for (let i = 1; i <= doc.numPages; i++) {
     const page = await doc.getPage(i);
-    const content = await page.getTextContent();
-    pages.push(content.items.map((item: any) => ("str" in item ? item.str : "")).join(" "));
+    const content = await page.getTextContent({ includeMarkedContent: false });
+    const text = content.items
+      .filter((item: any) => "str" in item)
+      .map((item: any) => item.str)
+      .join(" ");
+    if (text.trim()) pages.push(text);
   }
   return pages.join("\n");
 }
